@@ -1,0 +1,6 @@
+# 默認所有文檔的owner
+*       @Sorairo-779
+# 特定目錄
+/docs/  @Sorairo-779
+# 特定文檔
+README.md  @Sorairo-779
