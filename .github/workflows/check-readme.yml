@@ -1,0 +1,27 @@
+# check-readme.yml
+name: Check README
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Check README exists
+        run: |
+          if [ ! -f README.md ]; then
+            echo "README.md not found!"
+            exit 1
+          fi
+          echo "README.md exists ✓"
+      - name: Check LICENSE exists
+        run: |
+          if [ ! -f LICENSE ]; then
+            echo "LICENSE not found!"
+            exit 1
+          fi
+          echo "LICENSE exists ✓"
